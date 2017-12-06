@@ -7,5 +7,6 @@ namespace labFingesoParte2.Models
 {
     public class Director : Academico
     {
+
     }
 }
