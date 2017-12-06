@@ -1,0 +1,67 @@
+﻿@using labFingesoParte2.Models
+@model ActividadAcademica
+
+
+<body>
+    <div>
+        <div class="col-md-10">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5>Registrar una nueva actividad</h5>
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.titulo, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.titulo, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.titulo, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.fechaInicio, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.fechaInicio, new { @class = "form-control", type = "date" })
+                                @Html.ValidationMessageFor(m => m.fechaInicio, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.fechaTermino, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.fechaTermino, new { @class = "form-control", type = "date" })
+                                @Html.ValidationMessageFor(m => m.fechaTermino, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.descripcion, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextAreaFor(m => m.descripcion, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.descripcion, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.horasDuracion, new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.horasDuracion, new { @class = "form-control", type = "number" })
+                                @Html.ValidationMessageFor(m => m.horasDuracion, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Registrar" class="btn btn-default" />
+                            </div>
+                        </div>
+                    }
+                        
+                </div>
+            </div>
+        </div> 
+    </div>
+</body>

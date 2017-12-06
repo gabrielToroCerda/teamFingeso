@@ -2,13 +2,15 @@
 using System.Collections;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+
 using System.IO;
 namespace labFingesoParte2.Models
 {
     public class ConvenioDeDesempeño
     {
         // ATRIBUTOS
-
         private int         año;
         private float       calificacion;
         private float       precalificacion;
@@ -17,7 +19,7 @@ namespace labFingesoParte2.Models
         private float       horasPromedioSemanalesRealizadas;
         private float       horasPromedioAnualesPrometidas;
         private float       horasPromedioAnualesRealizadas;
-        private ArrayList   items;
+        private List<ItemAcademico>   items = new List<ItemAcademico>();
         // MÉTODOS
         // get
         public int getAño()
@@ -51,6 +53,11 @@ namespace labFingesoParte2.Models
         public float getHorasPromedioAnualesRealizadas()
         {
             return this.horasPromedioAnualesRealizadas;
+        }
+
+        public List<ItemAcademico> getItems()
+        {
+            return this.items;
         }
 
         // set
@@ -123,8 +130,9 @@ namespace labFingesoParte2.Models
         {
             return true;
         }
-        public void agregarItem()
+        public void agregarItem(ItemAcademico item)
         {
+            this.items.Add(item);
         }
     }
 }

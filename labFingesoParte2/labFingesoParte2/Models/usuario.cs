@@ -2,16 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace labFingesoParte2.Models
 {
     public class Usuario
     {
         // ATRIBUTOS
-        protected string nombreUsuario;
-        protected string contraseña;
-        protected string nombre;
-        protected string RUT;
+        [Required]
+        [Display(Name = "nombreUsuario")]
+        private string nombreUsuario;
+        //private string contraseña;
+
+        [Required]
+        [Display(Name = "nombre")]
+        private string nombre;
+
+        [Required]
+        [Display(Name = "rut")]
+        private string RUT;
 
         // MÉTODOS
 
@@ -20,10 +29,11 @@ namespace labFingesoParte2.Models
         {
             return this.nombreUsuario;
         }
+        /*
         public string getContraseña()
         {
             return this.contraseña;
-        }
+        }*/
         public string getNombre()
         {
             return this.nombre;
@@ -38,10 +48,11 @@ namespace labFingesoParte2.Models
         {
             this.nombreUsuario = nombreUsuario;
         }
+        /*
         public void setContraseña(string contraseña)
         {
             this.contraseña = contraseña;
-        }
+        }*/
         public void setNombre(string nombre)
         {
             this.nombre = nombre;

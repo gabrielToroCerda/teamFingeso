@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.IO;
@@ -13,7 +14,7 @@ namespace labFingesoParte2.Models
         private int                 cantidadActividades;
         private int                 estadoEvaluacion;
         private ConvenioDeDesempeño convenio;
-        private ArrayList           actividades;
+        private List<ActividadAcademica> actividades = new List<ActividadAcademica>();
 
         // MÉTODOS
 
@@ -37,6 +38,11 @@ namespace labFingesoParte2.Models
         public ConvenioDeDesempeño getConvenio()
         {
             return this.convenio;
+        }
+
+        public List<ActividadAcademica> getActividades()
+        {
+            return this.actividades;
         }
 
         // set
@@ -66,6 +72,7 @@ namespace labFingesoParte2.Models
             return 0;
         }
         public bool asignarActividad(string actividad)
+        public void agregarActividad(ActividadAcademica actividad)
         {
             bool confirmacion;
             try
@@ -80,6 +87,7 @@ namespace labFingesoParte2.Models
                 confirmacion = false;
             }
             return confirmacion;
+            this.actividades.Add(actividad);
         }
         public void crearInforme()
         {

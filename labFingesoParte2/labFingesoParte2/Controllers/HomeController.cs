@@ -26,5 +26,10 @@ namespace labFingesoParte2.Controllers
 
             return View();
         }
+
+        public ActionResult InicioAcademico()
+        {
+            return View();
+        }
     }
 }

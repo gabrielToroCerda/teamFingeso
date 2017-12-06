@@ -1,0 +1,48 @@
+﻿
+@using labFingesoParte2.Models
+@model Academico
+
+<body>
+    <div> 
+        <div class="row">
+            <div class="col-md-8" >
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3>Mis actividades académicas</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>En esta sección se presentan todas las actividades académicas que has realizado.</p>
+                    </div>
+                    <div class="row">
+                        @foreach (ActividadAcademica act in Model.getActividades())
+                        {
+                            <div class="col-md-6 col-md-offset-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item"><strong>@act.titulo</strong></li>
+                                    <li class="list-group-item">@act.fechaInicio</li>
+                                    <li class="list-group-item">@act.fechaTermino</li>
+                                    <li class="list-group-item">@act.descripcion</li>
+                                    <li class="list-group-item"><mark>@act.horasDuracion</mark></li>
+                                </ul>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5>Opciones</h5>
+                    </div>
+                    <div class="panel-body">
+                        <p><a class="btn btn-default" href="/Academico/FormularioActividad">Registrar actividad <span class="glyphicon glyphicon-pencil"></span></a></p>
+                        <p><a class="btn btn-default" href="/Academico/InicioAcademico">Volver <span class="glyphicon glyphicon-arrow-left"></span></a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
