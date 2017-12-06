@@ -201,9 +201,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Academico.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ActividadAcademica.cs" />
+    <Compile Include="Models\ComisionDeDepartamento.cs" />
+    <Compile Include="Models\ConvenioDeDesempeño.cs" />
+    <Compile Include="Models\Director.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ItemAcademico.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
