@@ -4,17 +4,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.IO;
+using System.ComponentModel.DataAnnotations;
+
 namespace labFingesoParte2.Models
 {
-    public class Academico : Usuario
+    public class Academico
     {
         // ATRIBUTOS
-        private string              gradoAcademico;
-        private string              departamento;
-        private int                 cantidadActividades;
-        private int                 estadoEvaluacion;
-        private ConvenioDeDesempeño convenio;
-        private List<ActividadAcademica> actividades = new List<ActividadAcademica>();
+        [Required]
+        [Display(Name = "Nombre de usuario:")]
+        public string nombreUsuario;
+        //private string contraseña;
+
+        [Required]
+        [Display(Name = "Nombre:")]
+        public string nombre;
+
+        [Required]
+        [Display(Name = "RUT:")]
+        public string RUT;
+        public string              gradoAcademico;
+        public string              departamento;
+        public int                 cantidadActividades;
+        public int                 estadoEvaluacion;
+        public ConvenioDeDesempeño convenio;
+        public List<ActividadAcademica> actividades = new List<ActividadAcademica>();
 
         // MÉTODOS
 
@@ -71,8 +85,7 @@ namespace labFingesoParte2.Models
         {
             return 0;
         }
-        public bool asignarActividad(string actividad)
-        public void agregarActividad(ActividadAcademica actividad)
+        public bool registrarUsuario(string actividad)
         {
             bool confirmacion;
             try
@@ -87,6 +100,10 @@ namespace labFingesoParte2.Models
                 confirmacion = false;
             }
             return confirmacion;
+            
+        }
+        public void agregarActividad(ActividadAcademica actividad)
+        {
             this.actividades.Add(actividad);
         }
         public void crearInforme()

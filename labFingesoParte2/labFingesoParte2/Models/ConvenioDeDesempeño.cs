@@ -112,7 +112,7 @@ namespace labFingesoParte2.Models
             bool confirmacion;
             try
             {
-                StreamReader archivo = File.AppendText("BDConvenio.txt");
+                StreamWriter archivo = File.AppendText("BDConvenio.txt");
                 archivo.WriteLine(academico + ";" + año + ";" + calificacion + ";" + precalificacion + ";" + estado + ";" + horasPromedioSemanalesPrometidas + ";" + horasPromedioSemanalesRealizadas + ";" + horasPromedioAnualesPrometidas + ";" + horasPromedioAnualesRealizadas);
                 confirmacion = true;
             }

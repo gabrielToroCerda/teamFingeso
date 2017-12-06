@@ -16,11 +16,11 @@ namespace labFingesoParte2.Models
 
         [Required]
         [Display(Name = "nombre")]
-        private string nombre;
+        protected string nombre;
 
         [Required]
         [Display(Name = "rut")]
-        private string RUT;
+        protected string RUT;
 
         // MÉTODOS
 
