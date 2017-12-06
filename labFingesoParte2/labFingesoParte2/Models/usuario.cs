@@ -8,10 +8,10 @@ namespace labFingesoParte2.Models
     public class Usuario
     {
         // ATRIBUTOS
-        private string nombreUsuario;
-        private string contraseña;
-        private string nombre;
-        private string RUT;
+        protected string nombreUsuario;
+        protected string contraseña;
+        protected string nombre;
+        protected string RUT;
 
         // MÉTODOS
 

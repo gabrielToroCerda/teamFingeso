@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 using System.Web;
-
+using System.IO;
 namespace labFingesoParte2.Models
 {
     public class Academico : Usuario
@@ -65,9 +65,21 @@ namespace labFingesoParte2.Models
         {
             return 0;
         }
-        public int asignarActividad()
+        public bool asignarActividad(string actividad)
         {
-            return 0;
+            bool confirmacion;
+            try
+            {
+                StreamWriter archivo = File.AppendText("BDActividades.txt");
+                archivo.WriteLine(nombre + ";" + departamento + ";"+ gradoAcademico+ ";"+ RUT+ ";"+ actividad);
+                archivo.Close();
+                confirmacion = true;
+            }
+            catch
+            {
+                confirmacion = false;
+            }
+            return confirmacion;
         }
         public void crearInforme()
         {

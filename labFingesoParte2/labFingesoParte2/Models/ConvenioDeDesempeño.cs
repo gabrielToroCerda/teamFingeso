@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 using System.Web;
-
+using System.IO;
 namespace labFingesoParte2.Models
 {
     public class ConvenioDeDesempeño
@@ -100,13 +100,20 @@ namespace labFingesoParte2.Models
         {
             return 0;
         }
-        public bool registrarHorasSemanales()
+        public bool generarRegistro(string academico)
         {
-            return true;
-        }
-        public bool registrarHorasAnuales()
-        {
-            return true;
+            bool confirmacion;
+            try
+            {
+                StreamReader archivo = File.AppendText("BDConvenio.txt");
+                archivo.WriteLine(academico + ";" + año + ";" + calificacion + ";" + precalificacion + ";" + estado + ";" + horasPromedioSemanalesPrometidas + ";" + horasPromedioSemanalesRealizadas + ";" + horasPromedioAnualesPrometidas + ";" + horasPromedioAnualesRealizadas);
+                confirmacion = true;
+            }
+            catch
+            {
+                confirmacion = false;
+            }
+            return confirmacion;
         }
         public bool borrarHorasSemanales()
         {
